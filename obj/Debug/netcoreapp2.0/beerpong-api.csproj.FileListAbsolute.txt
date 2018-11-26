@@ -1,0 +1,10 @@
+/home/gaetan/Documents/BDE/beerpong-api/obj/Debug/netcoreapp2.0/beerpong-api.csproj.CoreCompileInputs.cache
+/home/gaetan/Documents/BDE/beerpong-api/obj/Debug/netcoreapp2.0/beerpong-api.AssemblyInfoInputs.cache
+/home/gaetan/Documents/BDE/beerpong-api/obj/Debug/netcoreapp2.0/beerpong-api.AssemblyInfo.cs
+/home/gaetan/Documents/BDE/beerpong-api/bin/Debug/netcoreapp2.0/beerpong-api.deps.json
+/home/gaetan/Documents/BDE/beerpong-api/bin/Debug/netcoreapp2.0/beerpong-api.runtimeconfig.json
+/home/gaetan/Documents/BDE/beerpong-api/bin/Debug/netcoreapp2.0/beerpong-api.runtimeconfig.dev.json
+/home/gaetan/Documents/BDE/beerpong-api/bin/Debug/netcoreapp2.0/beerpong-api.dll
+/home/gaetan/Documents/BDE/beerpong-api/bin/Debug/netcoreapp2.0/beerpong-api.pdb
+/home/gaetan/Documents/BDE/beerpong-api/obj/Debug/netcoreapp2.0/beerpong-api.dll
+/home/gaetan/Documents/BDE/beerpong-api/obj/Debug/netcoreapp2.0/beerpong-api.pdb
