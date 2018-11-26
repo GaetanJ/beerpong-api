@@ -10,5 +10,6 @@ namespace beerpong_api.Models
         public int Order { get; set; }
         public int BeerFor1 { get; set; }
         public int BeerFor2 { get; set; }
+        public bool Played { get; set; }
     }
 }

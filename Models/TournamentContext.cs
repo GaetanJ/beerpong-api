@@ -15,6 +15,7 @@ namespace beerpong_api.Models
         public DbSet<Pool> Pool { get; set; }
         public DbSet<Match> Match { get; set; }
         public DbSet<Team> Team { get; set; }
+        public DbSet<Round> Round { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -34,6 +35,9 @@ namespace beerpong_api.Models
             modelBuilder.Entity<Match>()
                 .Property(m => m.BeerFor2)
                 .HasDefaultValue(0);
+            modelBuilder.Entity<Match>()
+                .Property(m => m.Played)
+                .HasDefaultValue(false);
         }
     }
 }

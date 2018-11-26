@@ -8,3 +8,14 @@
 /home/gaetan/Documents/BDE/beerpong-api/bin/Debug/netcoreapp2.0/beerpong-api.pdb
 /home/gaetan/Documents/BDE/beerpong-api/obj/Debug/netcoreapp2.0/beerpong-api.dll
 /home/gaetan/Documents/BDE/beerpong-api/obj/Debug/netcoreapp2.0/beerpong-api.pdb
+C:\Users\Milfleet\Documents\tmp\beerpong-api\bin\Debug\netcoreapp2.0\beerpong-api.deps.json
+C:\Users\Milfleet\Documents\tmp\beerpong-api\bin\Debug\netcoreapp2.0\beerpong-api.runtimeconfig.json
+C:\Users\Milfleet\Documents\tmp\beerpong-api\bin\Debug\netcoreapp2.0\beerpong-api.runtimeconfig.dev.json
+C:\Users\Milfleet\Documents\tmp\beerpong-api\bin\Debug\netcoreapp2.0\beerpong-api.dll
+C:\Users\Milfleet\Documents\tmp\beerpong-api\bin\Debug\netcoreapp2.0\beerpong-api.pdb
+C:\Users\Milfleet\Documents\tmp\beerpong-api\obj\Debug\netcoreapp2.0\beerpong-api.csprojAssemblyReference.cache
+C:\Users\Milfleet\Documents\tmp\beerpong-api\obj\Debug\netcoreapp2.0\beerpong-api.csproj.CoreCompileInputs.cache
+C:\Users\Milfleet\Documents\tmp\beerpong-api\obj\Debug\netcoreapp2.0\beerpong-api.AssemblyInfoInputs.cache
+C:\Users\Milfleet\Documents\tmp\beerpong-api\obj\Debug\netcoreapp2.0\beerpong-api.AssemblyInfo.cs
+C:\Users\Milfleet\Documents\tmp\beerpong-api\obj\Debug\netcoreapp2.0\beerpong-api.dll
+C:\Users\Milfleet\Documents\tmp\beerpong-api\obj\Debug\netcoreapp2.0\beerpong-api.pdb

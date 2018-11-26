@@ -53,11 +53,24 @@ namespace beerpong_api.Controllers
             _DbService.CreateTournament(tournament);
         }
 
+         // POST api/values
+        [HttpPost("/round/{type}")]
+        public void PostRound([FromBody]Tournament tournament)
+        {
+            _DbService.CreateTournament(tournament);
+        }
+
         // PUT api/values/5
         [HttpPut("match/{id}")]
-        public void Put(int id, [FromBody]Match match)
+        public void PutMacth(int id, [FromBody]Match match)
         {
             _DbService.UpdateMatch(id, match);
+        }
+
+        [HttpPut("match/edit/{id}")]
+        public void EditMatch(int id, [FromBody]Match match)
+        {
+            _DbService.EditMatch(id, match);
         }
 
         // DELETE api/values/5

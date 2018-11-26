@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using beerpong_api.Models;
@@ -11,7 +12,9 @@ namespace beerpong_api.Services
         Task<Tournament> GetTournamentByIdAsync(int id);
         Tournament GetLastTournament();
         Pool GetPoolById(int id);
+        List<Team> GetRoundByType(int type);
         void UpdateMatch(int id, Match match);
+        void EditMatch(int id, Match match);
     }
     public class DbService : IDbService
     {
@@ -75,6 +78,7 @@ namespace beerpong_api.Services
             return result;
         }
 
+
         public void UpdateMatch(int id, Match match)
         {
             var matchToUpdate = _context.Match.Include(m => m.Team1)
@@ -106,6 +110,8 @@ namespace beerpong_api.Services
                     matchToUpdate.Team2.Points += 3;
                 }
 
+                matchToUpdate.Played = true;
+
                 // Update matchToUpdate in DbSet
                 _context.Match.Update(matchToUpdate);
 
@@ -114,5 +120,57 @@ namespace beerpong_api.Services
             }
         }
 
+
+        public void EditMatch(int id, Match match)
+        {
+            var matchToEdit = _context.Match.Include(m => m.Team1)
+                                            .Include(m => m.Team2)
+                                            .FirstOrDefault(m => m.ID == id);
+
+
+            // Validate matchToEdit is not null
+            if (matchToEdit != null)
+            {
+                matchToEdit.Team1.BeerFor = (matchToEdit.Team1.BeerFor - matchToEdit.BeerFor1) + match.BeerFor1;
+                matchToEdit.Team1.BeerAgainst = (matchToEdit.Team1.BeerAgainst - matchToEdit.BeerFor2) + match.BeerFor2;
+
+                matchToEdit.Team2.BeerFor = (matchToEdit.Team2.BeerFor - matchToEdit.BeerFor2) + match.BeerFor2;
+                matchToEdit.Team2.BeerAgainst = (matchToEdit.Team2.BeerAgainst - matchToEdit.BeerFor1) + match.BeerFor1;
+
+                // Remove old points
+                if(matchToEdit.BeerFor1 > matchToEdit.BeerFor2) {
+                    matchToEdit.Team1.Points -= 3;
+                }
+                else if (matchToEdit.BeerFor1 == matchToEdit.BeerFor2) {
+                    matchToEdit.Team1.Points -= 1;
+                    matchToEdit.Team2.Points -= 1;
+                }
+                else {
+                    matchToEdit.Team2.Points -= 3;
+                }
+
+
+                // Add new points
+                if(match.BeerFor1 > match.BeerFor2) {
+                    matchToEdit.Team1.Points += 3;
+                }
+                else if (match.BeerFor1 == match.BeerFor2) {
+                    matchToEdit.Team1.Points += 1;
+                    matchToEdit.Team2.Points += 1;
+                }
+                else {
+                    matchToEdit.Team2.Points += 3;
+                }
+
+                matchToEdit.BeerFor1 = match.BeerFor1;
+                matchToEdit.BeerFor2 = match.BeerFor2;
+
+                // Edit matchToEdit in DbSet
+                _context.Match.Update(matchToEdit);
+
+                // Save changes in database
+                _context.SaveChanges();
+            }
+        }
     }
 }

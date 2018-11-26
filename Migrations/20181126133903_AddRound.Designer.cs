@@ -11,9 +11,10 @@ using System;
 namespace beerpongapi.Migrations
 {
     [DbContext(typeof(TournamentContext))]
-    partial class TournamentContextModelSnapshot : ModelSnapshot
+    [Migration("20181126133903_AddRound")]
+    partial class AddRound
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,8 +42,6 @@ namespace beerpongapi.Migrations
 
                     b.Property<int?>("PoolID");
 
-                    b.Property<int?>("RoundID");
-
                     b.Property<int?>("Team1ID");
 
                     b.Property<int?>("Team2ID");
@@ -50,8 +49,6 @@ namespace beerpongapi.Migrations
                     b.HasKey("ID");
 
                     b.HasIndex("PoolID");
-
-                    b.HasIndex("RoundID");
 
                     b.HasIndex("Team1ID");
 
@@ -74,20 +71,6 @@ namespace beerpongapi.Migrations
                     b.HasIndex("TournamentID");
 
                     b.ToTable("Pool");
-                });
-
-            modelBuilder.Entity("beerpong_api.Models.Round", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("TournamentID");
-
-                    b.Property<int>("Type");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Round");
                 });
 
             modelBuilder.Entity("beerpong_api.Models.Team", b =>
@@ -139,10 +122,6 @@ namespace beerpongapi.Migrations
                     b.HasOne("beerpong_api.Models.Pool")
                         .WithMany("Matches")
                         .HasForeignKey("PoolID");
-
-                    b.HasOne("beerpong_api.Models.Round")
-                        .WithMany("Matches")
-                        .HasForeignKey("RoundID");
 
                     b.HasOne("beerpong_api.Models.Team", "Team1")
                         .WithMany()
